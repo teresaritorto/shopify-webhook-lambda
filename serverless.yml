@@ -1,0 +1,29 @@
+service: shopify-webhook-api
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${env:stage}
+  region: ${env:region}
+  accountId: ${env:accountId}
+  stackTags:
+      project: "Shopify Webhook API"
+      name: "ShopifyWebhookAPI"
+  versionFunctions: false
+  cfLogs: true
+  environment:    
+    region: ${env:region}
+    stage: ${env:stage}
+    logLevel: ${env:logLevel}   
+    shopifySecret: ${env:shopifySecret}
+functions:
+  webhook-api:
+    handler: api.handler
+    name: api-${self:provider.stage}
+    description: The API used by the Shopify Webhook
+    memorySize: 128
+    timeout: 30
+    events:      
+      - http:
+          path: webhook-api
+          method: post
+          integration: lambda-proxy

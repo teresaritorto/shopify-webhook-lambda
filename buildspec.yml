@@ -1,0 +1,12 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      # - npm i serverless
+      # - npm run install
+  build:
+    commands:
+      # - npm run deploy
+  post_build:
+    commands:
+      # - npm run test
