@@ -1,7 +1,5 @@
 # Collections Search Updater
 
-![Build Status](TBD)
-
 Boilerplate Serverless API that will be invoked by a Shopify webhook.
 
 ## Development 
