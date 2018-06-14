@@ -1,4 +1,4 @@
-# Collections Search Updater
+# Boilerplate for a Shopify Webhook API
 
 Boilerplate Serverless API that will be invoked by a Shopify webhook.
 
